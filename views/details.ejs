@@ -1,0 +1,21 @@
+<html>
+    <%- include("./partials/head.ejs") %>
+    <body>
+        <%- include("./partials/nav.ejs") %>
+
+        <div class="details content">
+            <h2><%= blog.title %></h2>
+            <div class="content">
+                <p><%= blog.body %></p>
+            </div>
+            <!-- <a class="delete" data-doc="<%= blog._id%>">delete</a> -->
+            <form action ="/edit/<%= blog._id %>" method="POST">
+                <input type="submit" class="updated" name="updated" value="Update">
+            </form>
+            <form action ="/delete/<%= blog._id %>" method="POST">
+                <input type="submit" class="delete" name="remove" value="Delete">
+            </form>
+        </div>
+        <%- include("./partials/footer.ejs") %>
+    </body>
+</html>
